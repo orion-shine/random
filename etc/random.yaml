@@ -1,3 +1,10 @@
 Name: random
 Host: 0.0.0.0
 Port: 8888
+
+
+Redis:
+  Pass: Pl@1221view
+  Host: 192.168.3.80:6379
+  Type: node
+  Tls: false
