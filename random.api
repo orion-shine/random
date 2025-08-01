@@ -1,0 +1,18 @@
+syntax = "v1"
+
+type Request {
+	Secret string  `json:"Secret"`
+	Type   string  `json:"Type,options=len|float|sort|nums"`
+	End    string  `json:"End"`
+	Arr    []int64 `json:"Arr"`
+}
+
+type Response {
+	Data string `json:"Data"`
+}
+
+service random {
+	@handler RandomHandler
+	post /calcRandom (Request) returns (Response)
+}
+
