@@ -16,8 +16,33 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodPost,
-				Path:    "/calcRandom",
-				Handler: RandomHandler(serverCtx),
+				Path:    "/arr",
+				Handler: ArrHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/arrRet",
+				Handler: ArrRetHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/float",
+				Handler: FloatHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/int",
+				Handler: IntHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/lottery",
+				Handler: LotteryHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/puke",
+				Handler: PukeHandler(serverCtx),
 			},
 		},
 	)

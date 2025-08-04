@@ -2,7 +2,11 @@ module random
 
 go 1.23.5
 
-require github.com/zeromicro/go-zero v1.8.5
+require (
+	github.com/aliyun/aliyun-tablestore-go-sdk v1.7.17
+	github.com/joho/godotenv v1.5.1
+	github.com/zeromicro/go-zero v1.8.5
+)
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
@@ -13,10 +17,13 @@ require (
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
+	github.com/golang/protobuf v1.5.4 // indirect
+	github.com/google/flatbuffers v23.5.26+incompatible // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grafana/pyroscope-go v1.2.2 // indirect
 	github.com/grafana/pyroscope-go/godeltaprof v0.1.8 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 // indirect
+	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect

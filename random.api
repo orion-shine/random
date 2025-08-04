@@ -1,18 +1,61 @@
 syntax = "v1"
 
-type Request {
+// 随机整数
+type IntRequest {
+	Secret string `json:"Secret"`
+	End    int64  `json:"End"`
+}
+
+// 随机浮点数
+type FloatRequest {
+	Secret string `json:"Secret"`
+}
+
+// 数组排列
+type ArrRequest {
 	Secret string  `json:"Secret"`
-	Type   string  `json:"Type,options=len|float|sort|nums"`
-	End    string  `json:"End"`
 	Arr    []int64 `json:"Arr"`
 }
 
+// 数组取数
+type ArrRetRequest {
+	Secret string  `json:"Secret"`
+	Arr    []int64 `json:"Arr"`
+}
+
+// 扑克牌  type 区分 带不带大小王
+type PukeRequest {
+	Secret string `json:"Secret"`
+	Type   string `json:"Type,options=with|without"`
+}
+
+// 彩票 Type 区分 pc28 或者 六合彩
+type LotteryRequest {
+	Secret string `json:"Secret"`
+	Type   string `json:"Type,options=pc28|markSix"`
+}
+
 type Response {
-	Data string `json:"Data"`
+	Result string `json:"Result"`
 }
 
 service random {
-	@handler RandomHandler
-	post /calcRandom (Request) returns (Response)
+	@handler IntHandler
+	post /int (IntRequest) returns (Response)
+
+	@handler FloatHandler
+	post /float (FloatRequest) returns (Response)
+
+	@handler ArrHandler
+	post /arr (ArrRequest) returns (Response)
+
+	@handler ArrRetHandler
+	post /arrRet (ArrRetRequest) returns (Response)
+
+	@handler PukeHandler
+	post /puke (PukeRequest) returns (Response)
+
+	@handler LotteryHandler
+	post /lottery (LotteryRequest) returns (Response)
 }
 

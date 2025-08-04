@@ -9,16 +9,16 @@ import (
 	"random/internal/types"
 )
 
-func RandomHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func FloatHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var req types.Request
+		var req types.FloatRequest
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 			return
 		}
 
-		l := logic.NewRandomLogic(r.Context(), svcCtx)
-		resp, err := l.Random(&req)
+		l := logic.NewFloatLogic(r.Context(), svcCtx)
+		resp, err := l.Float(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {

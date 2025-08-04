@@ -3,13 +3,35 @@
 
 package types
 
-type Request struct {
+type ArrRequest struct {
 	Secret string  `json:"Secret"`
-	Type   string  `json:"Type,options=len|float|sort|nums"`
-	End    string  `json:"End"`
 	Arr    []int64 `json:"Arr"`
 }
 
+type ArrRetRequest struct {
+	Secret string  `json:"Secret"`
+	Arr    []int64 `json:"Arr"`
+}
+
+type FloatRequest struct {
+	Secret string `json:"Secret"`
+}
+
+type IntRequest struct {
+	Secret string `json:"Secret"`
+	End    int64  `json:"End"`
+}
+
+type LotteryRequest struct {
+	Secret string `json:"Secret"`
+	Type   string `json:"Type,options=pc28|markSix"`
+}
+
+type PukeRequest struct {
+	Secret string `json:"Secret"`
+	Type   string `json:"Type,options=with|without"`
+}
+
 type Response struct {
-	Data string `json:"Data"`
+	Result string `json:"Result"`
 }
